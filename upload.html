@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replays HUB - Upload</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <nav class="navbar chrome-border-bottom">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="FGC Replays Hub Logo"></a>
+        </div>
+        
+        <form class="search-container" action="#" method="GET">
+            <input type="text" class="search-input" placeholder="SEARCH..." aria-label="Search">
+            <button type="submit" class="search-btn" aria-label="Submit Search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="upload.html" class="active">Upload</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="hud-top-bar">
+            <span class="hud-code">LOC :: REPLAY_UPLOAD</span>
+        </div>
+
+        <section class="metal-card halftone-bg form-card">
+            <div class="card-header">
+                <h2>UPLOAD REPLAY</h2>
+                <span class="hud-tag">SYS // DATA_ENTRY</span>
+            </div>
+
+            <form class="cyber-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="video-title">VIDEO TITLE</label>
+                    <input type="text" id="video-title" name="video_title" class="cyber-input" placeholder="e.g. EVOLUTION 2026 - GRAND FINALS" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="youtube-link">YOUTUBE LINK</label>
+                    <input type="url" id="youtube-link" name="youtube_link" class="cyber-input" placeholder="https://www.youtube.com/watch?v=..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="game">GAME</label>
+                    <input type="text" id="game" name="game" class="cyber-input" placeholder="e.g. KOF 2002 UM, STREET FIGHTER 6..." required>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="player1-name">PLAYER 1 NAME</label>
+                        <input type="text" id="player1-name" name="player1_name" class="cyber-input" placeholder="Player 1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player2-name">PLAYER 2 NAME</label>
+                        <input type="text" id="player2-name" name="player2_name" class="cyber-input" placeholder="Player 2" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player1-char">PLAYER 1 CHARACTER</label>
+                        <input type="text" id="player1-char" name="player1_char" class="cyber-input" placeholder="e.g. Kyo, Sol, Chun-Li..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player2-char">PLAYER 2 CHARACTER</label>
+                        <input type="text" id="player2-char" name="player2_char" class="cyber-input" placeholder="e.g. Iori, Ky, Ryu..." required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="cyber-btn">SUBMIT REPLAY</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

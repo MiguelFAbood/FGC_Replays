@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replays HUB</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <nav class="navbar chrome-border-bottom">
+        <div class="logo">
+            <img src="logo.png" alt="FGC Replays Hub Logo">
+        </div>
+        
+        <form class="search-container" action="#" method="GET">
+            <input type="text" class="search-input" placeholder="SEARCH..." aria-label="Search">
+            <button type="submit" class="search-btn" aria-label="Submit Search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <div class="hud-top-bar">
+            <span class="hud-code">LOC :: REPLAY_ARCHIVE</span>
+        </div>
+
+        <section class="grid-layout">
+            <div class="metal-card halftone-bg">
+                <div class="card-header">
+                    <h2>VIDEO NAME</h2>
+                    <span class="hud-tag">TOURNAMENT_MATCH</span>
+                </div>
+                <div class="video-preview">
+                    <div class="play-btn-wrapper">
+                        <button class="cyber-btn">LOAD REPLAY</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metal-card chrome-accent">
+                <div class="card-header">
+                    <h2>MATCH DATA</h2>
+                    <span class="hud-tag">SYS // LOG</span>
+                </div>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <span class="stat-label">PLAYER 1</span>
+                        <span class="stat-val blue-glow">NAME 1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">PLAYER 2</span>
+                        <span class="stat-val blue-glow">NAME 2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">GAME</span>
+                        <span class="stat-val">KOF 2002 UM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

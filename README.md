@@ -9,10 +9,6 @@ Replays HUB is a fighting game replay website concept for browsing match replays
 - **Contact (`contact.html`)** - contact form for sending a message.
 - **Login (`login.html`)** - login form concept.
 
-## Run locally
-
-This is a static HTML and CSS site. Open `index.html` in a web browser to view it. No build step or dependencies are required.
-
 ## Project files
 
 - `styles.css` - shared layout, visual styles, and responsive mobile breakpoints.

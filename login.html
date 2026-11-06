@@ -50,28 +50,70 @@
         </div>
 
         <section class="metal-card halftone-bg login-card">
-            <div class="card-header">
+            <div class="card-header" id="auth-card">
                 <h2>USER LOGIN</h2>
                 <span class="hud-tag">SYS // ACCESS_CONTROL</span>
             </div>
 
-            <form class="cyber-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="username">USERNAME / USER ID</label>
-                    <input type="text" id="username" name="username" class="cyber-input" placeholder="ENTER USERNAME" required>
-                </div>
+            <p class="review-notice auth-demo-notice">
+                LOCAL DEMO ONLY: accounts are stored in accounts.json. Do not use real passwords or expose this server to the internet.
+            </p>
+            <p id="auth-status" class="auth-status" role="status" aria-live="polite" hidden></p>
 
-                <div class="form-group">
-                    <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="password" class="cyber-input" placeholder="••••••••" required>
-                </div>
+            <div id="login-panel">
+                <form class="cyber-form auth-form" id="login-form">
+                    <div class="form-group">
+                        <label for="login-identifier">USERNAME OR EMAIL</label>
+                        <input type="text" id="login-identifier" name="identifier" class="cyber-input" placeholder="ENTER USERNAME OR EMAIL" autocomplete="username" required>
+                    </div>
 
-                <div class="form-actions" style="justify-content: space-between;">
-                    <a href="#" style="color: var(--accent-silver); font-size: 0.8rem; text-decoration: none; font-family: var(--font-mono);">FORGOT PASSWORD?</a>
-                    <button type="submit" class="cyber-btn">AUTHENTICATE</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="login-password">PASSWORD</label>
+                        <input type="password" id="login-password" name="password" class="cyber-input" placeholder="ENTER PASSWORD" autocomplete="current-password" required>
+                    </div>
+
+                    <div class="form-actions auth-actions">
+                        <button type="submit" class="cyber-btn">AUTHENTICATE</button>
+                    </div>
+                </form>
+                <p class="auth-switch-row">NEW PLAYER? <button type="button" class="auth-switch" id="show-signup">CREATE ACCOUNT</button></p>
+            </div>
+
+            <div id="signup-panel" hidden>
+                <form class="cyber-form auth-form" id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-username">USERNAME</label>
+                        <input type="text" id="signup-username" name="username" class="cyber-input" placeholder="3-24 CHARACTERS: A-Z, 0-9, . _ -" minlength="3" maxlength="24" pattern="[A-Za-z0-9._\-]{3,24}" autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">EMAIL ADDRESS</label>
+                        <input type="email" id="signup-email" name="email" class="cyber-input" placeholder="USER@DOMAIN.COM" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-password">PASSWORD</label>
+                        <input type="password" id="signup-password" name="password" class="cyber-input" placeholder="AT LEAST 8 CHARACTERS" minlength="8" autocomplete="new-password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirm-password" name="confirm-password" class="cyber-input" placeholder="RE-ENTER PASSWORD" minlength="8" autocomplete="new-password" required>
+                    </div>
+
+                    <div class="form-actions auth-actions">
+                        <button type="submit" class="cyber-btn">CREATE ACCOUNT</button>
+                    </div>
+                </form>
+                <p class="auth-switch-row">ALREADY REGISTERED? <button type="button" class="auth-switch" id="show-login">BACK TO LOGIN</button></p>
+            </div>
+
+            <div id="auth-session" class="auth-session" hidden>
+                <p>SESSION ACTIVE FOR <strong data-auth-username></strong> · ROLE: <strong data-auth-role></strong>.</p>
+                <button type="button" class="cyber-btn" id="logout-button">SIGN OUT</button>
+            </div>
         </section>
     </main>
+    <script src="script.js" defer></script>
 </body>
 </html>

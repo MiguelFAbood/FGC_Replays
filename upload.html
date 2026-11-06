@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Replays HUB - Upload</title>
     <link rel="icon" href="icon.png" type="image/png">
     
@@ -52,10 +53,16 @@
         <section class="metal-card halftone-bg form-card">
             <div class="card-header">
                 <h2>UPLOAD REPLAY</h2>
-                <span class="hud-tag">SYS // DATA_ENTRY</span>
+                <span class="hud-tag">SYS // SUBMISSION</span>
             </div>
 
-            <form class="cyber-form" action="#" method="POST">
+            <p class="review-notice">
+                Your replay submission will be reviewed by an administrator. It will only appear in the public archive after approval.
+            </p>
+
+            <p id="upload-status" class="auth-status" role="status" aria-live="polite" hidden></p>
+
+            <form class="cyber-form" id="upload-form">
                 <div class="form-group">
                     <label for="video-title">VIDEO TITLE</label>
                     <input type="text" id="video-title" name="video_title" class="cyber-input" placeholder="e.g. EVOLUTION 2026 - GRAND FINALS" required>
@@ -68,7 +75,13 @@
 
                 <div class="form-group">
                     <label for="game">GAME</label>
-                    <input type="text" id="game" name="game" class="cyber-input" placeholder="e.g. KOF 2002 UM, STREET FIGHTER 6..." required>
+                    <select class="cyber-input" id="game" name="game" required>
+                        <option value="">SELECT A GAME</option>
+                        <option>KOF 2002 UM</option>
+                        <option>STREET FIGHTER 6</option>
+                        <option>GUILTY GEAR XX ACCENT CORE + R</option>
+                        <option>GUILTY GEAR -STRIVE-</option>
+                    </select>
                 </div>
 
                 <div class="form-grid">
@@ -99,5 +112,6 @@
             </form>
         </section>
     </main>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+[
+  {
+    "username": "PPPinecone",
+    "email": "miguelabood@live.com",
+    "salt": "32012c0924795fd671a9c3cd3fb3a205",
+    "password_hash": "c4a7ddbf6e772525dbbeae3a7596be7e285dcf101b4be957572c7bef0b85a038",
+    "is_admin": true
+  }
+]

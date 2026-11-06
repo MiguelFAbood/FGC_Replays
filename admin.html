@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replays HUB - Replay Moderation</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <nav class="navbar chrome-border-bottom" aria-label="Main navigation">
+        <div class="logo"><a href="index.html"><img src="logo.png" alt="FGC Replays Hub home"></a></div>
+        <form class="search-container" action="index.html#replay-archive" method="GET" role="search">
+            <input type="search" class="search-input" name="q" placeholder="SEARCH..." aria-label="Search replays">
+            <button type="submit" class="search-btn" aria-label="Submit search">⌕</button>
+        </form>
+        <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="upload.html">Upload</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="login.html">Login</a></li></ul>
+        <div class="hamburger" aria-hidden="true"><span></span><span></span><span></span></div>
+    </nav>
+    <main class="main-container">
+        <div class="hud-top-bar"><span class="hud-code">LOC :: ADMIN_REVIEW</span><span class="hud-code" id="admin-count">0 REQUESTS</span></div>
+        <section class="metal-card halftone-bg">
+            <div class="card-header"><h1>REPLAY VALIDATION QUEUE</h1><span class="hud-tag">ADMIN // REVIEW</span></div>
+            <p id="admin-status" class="auth-status" role="status" aria-live="polite"></p>
+            <div id="admin-list" class="replay-list"></div>
+        </section>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>

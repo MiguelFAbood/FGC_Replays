@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Replays HUB</title>
     <link rel="icon" href="icon.png" type="image/png">
     
@@ -15,15 +16,15 @@
 <body>
     <div class="scanlines"></div>
 
-    <nav class="navbar chrome-border-bottom">
+    <nav class="navbar chrome-border-bottom" aria-label="Main navigation">
         <div class="logo">
-            <img src="logo.png" alt="FGC Replays Hub Logo">
+            <a href="index.html"><img src="logo.png" alt="FGC Replays Hub home"></a>
         </div>
         
-        <form class="search-container" action="#" method="GET">
-            <input type="text" class="search-input" placeholder="SEARCH..." aria-label="Search">
-            <button type="submit" class="search-btn" aria-label="Submit Search">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
+        <form class="search-container" action="#replay-archive" method="GET" role="search">
+            <input type="search" class="search-input" name="q" placeholder="SEARCH..." aria-label="Search replays">
+            <button type="submit" class="search-btn" aria-label="Submit search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
@@ -31,59 +32,103 @@
         </form>
 
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
             <li><a href="upload.html">Upload</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
 
-        <div class="hamburger">
+        <div class="hamburger" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </nav>
 
-    <!-- Main Content Area -->
     <main class="main-container">
         <div class="hud-top-bar">
             <span class="hud-code">LOC :: REPLAY_ARCHIVE</span>
+            <span class="hud-code" id="archive-count" aria-live="polite">04 MATCHES</span>
         </div>
 
-        <section class="grid-layout">
-            <div class="metal-card halftone-bg">
+        <section class="grid-layout" aria-label="Featured replay">
+            <article class="metal-card halftone-bg">
                 <div class="card-header">
-                    <h2>VIDEO NAME</h2>
-                    <span class="hud-tag">TOURNAMENT_MATCH</span>
+                    <h1>EVOLUTION 2026 — GRAND FINALS</h1>
+                    <span class="hud-tag">FEATURED_MATCH</span>
                 </div>
-                <div class="video-preview">
+                <div class="video-preview" role="img" aria-label="Replay preview placeholder">
                     <div class="play-btn-wrapper">
-                        <button class="cyber-btn">LOAD REPLAY</button>
+                        <button class="cyber-btn" type="button">LOAD REPLAY</button>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="metal-card chrome-accent">
+            <article class="metal-card chrome-accent">
                 <div class="card-header">
                     <h2>MATCH DATA</h2>
                     <span class="hud-tag">SYS // LOG</span>
                 </div>
-                <div class="stats-list">
+                <dl class="stats-list">
                     <div class="stat-item">
-                        <span class="stat-label">PLAYER 1</span>
-                        <span class="stat-val blue-glow">NAME 1</span>
+                        <dt class="stat-label">PLAYER 1</dt>
+                        <dd class="stat-val blue-glow"></dd>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">PLAYER 2</span>
-                        <span class="stat-val blue-glow">NAME 2</span>
+                        <dt class="stat-label">PLAYER 2</dt>
+                        <dd class="stat-val blue-glow"></dd>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">GAME</span>
-                        <span class="stat-val">KOF 2002 UM</span>
+                        <dt class="stat-label">GAME</dt>
+                        <dd class="stat-val"></dd>
                     </div>
+                    <div class="stat-item">
+                        <dt class="stat-label">DATE</dt>
+                        <dd class="stat-val"></dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        <section class="archive-section" id="replay-archive" aria-labelledby="archive-title">
+            <div class="section-heading">
+                <div>
+                    <span class="hud-code">DATABASE // MATCH RECORDS</span>
+                    <h2 id="archive-title">REPLAY ARCHIVE</h2>
                 </div>
+                <a class="cyber-btn upload-link" href="upload.html">+ UPLOAD REPLAY</a>
+            </div>
+
+            <form class="archive-controls" action="#replay-archive" method="GET" aria-label="Replay filters">
+                <div class="form-group archive-search">
+                    <label for="archive-search">SEARCH MATCHES</label>
+                    <input class="cyber-input" id="archive-search" name="q" type="search" placeholder="Player, game, tournament...">
+                </div>
+                <div class="form-group">
+                    <label for="game-filter">GAME</label>
+                    <select class="cyber-input" id="game-filter" name="game">
+                        <option value="">ALL GAMES</option>
+                        <option>KOF 2002 UM</option>
+                        <option>STREET FIGHTER 6</option>
+                        <option>GUILTY GEAR XX ACCENT CORE + R</option>
+                        <option>GUILTY GEAR -STRIVE-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sort-replays">SORT BY</label>
+                    <select class="cyber-input" id="sort-replays" name="sort">
+                        <option value="newest">NEWEST FIRST</option>
+                        <option value="oldest">OLDEST FIRST</option>
+                        <option value="game">GAME A–Z</option>
+                    </select>
+                </div>
+                <button class="cyber-btn filter-btn" type="submit">APPLY</button>
+            </form>
+
+            <div class="replay-list">
             </div>
         </section>
     </main>
+    <script src="script.js" defer></script>
 </body>
 </html>

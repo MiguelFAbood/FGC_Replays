@@ -55,7 +55,8 @@
                 <span class="hud-tag">SYS // TRANSMIT</span>
             </div>
 
-            <form class="cyber-form" action="#" method="POST">
+            <form class="cyber-form" id="contact-form" action="#" method="POST">
+                <div id="contact-status" class="form-status" role="status" hidden></div>
                 <div class="form-group">
                     <label for="contact-name">NAME</label>
                     <input type="text" id="contact-name" name="name" class="cyber-input" placeholder="YOUR NAME" required>
@@ -82,5 +83,6 @@
             </form>
         </section>
     </main>
+    <script src="script.js" defer></script>
 </body>
 </html>

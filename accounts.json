@@ -5,5 +5,12 @@
     "salt": "32012c0924795fd671a9c3cd3fb3a205",
     "password_hash": "c4a7ddbf6e772525dbbeae3a7596be7e285dcf101b4be957572c7bef0b85a038",
     "is_admin": true
+  },
+  {
+    "username": "ProfessorDiego",
+    "email": "professordiego@email.com",
+    "salt": "64a233a8636c4223756a2f4058a12cbf",
+    "password_hash": "82ffefd340d4cb1f4f2475e27ac0a56bd56073aba2549462c47dab538f58324a",
+    "is_admin": true
   }
 ]
